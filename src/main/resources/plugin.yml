@@ -1,0 +1,8 @@
+name: NameHistory
+version: 1.0
+main: logan.namehistory.NameHistoryPlugin
+author: Tre
+commands:
+  history:
+    permission: namehistory.use
+    usage: /history <name>
