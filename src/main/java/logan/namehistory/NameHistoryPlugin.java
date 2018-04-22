@@ -44,13 +44,12 @@ public class NameHistoryPlugin extends JavaPlugin {
                 @Override
                 public void run() {
 
-                    SortedMap<Long, String> nameHistory = null;
                     if (!NAME_HISTORY.containsKey(uuid)) {
-                        nameHistory = getNameHistory(uuid);
-                        NAME_HISTORY.put(uuid, nameHistory);
+                        NAME_HISTORY.put(uuid, getNameHistory(uuid));
                     }
 
-                    if (nameHistory == null || nameHistory.size() == 0) {
+                    SortedMap<Long, String> nameHistory = NAME_HISTORY.get(uuid);
+                    if (nameHistory.size() == 0) {
                         sender.sendMessage("This player has no history.");
                         return;
                     }
